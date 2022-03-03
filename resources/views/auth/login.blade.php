@@ -21,7 +21,7 @@
             <p class="fs-5">Login Form</p>
           </div>
           <div class="card-body">
-            <form action="#" method="POST">
+            <form action="{{ route('login') }}" method="POST">
               @csrf
               <div class="mb-3">
                 <label class="form-label">Email :</label>

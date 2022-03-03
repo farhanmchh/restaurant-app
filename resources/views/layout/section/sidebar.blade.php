@@ -7,13 +7,13 @@
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li>
-      <a href="/dashboard/index" class="nav-link {{ Request::is('dashboard/*') ? 'active' : 'text-dark' }}">
+      <a href="" class="nav-link {{ Request::is('dashboard/*') ? 'active' : 'text-dark' }}">
         Dashboard
       </a>
     </li>
     <li>
-      <a href="/order/index" class="nav-link {{ Request::is('order/*') ? 'active' : 'text-dark' }}">
-        Orders
+      <a href="/customer/index" class="nav-link {{ Request::is('customer/*') ? 'active' : 'text-dark' }}">
+        Customers
       </a>
     </li>
     <li>
@@ -22,11 +22,19 @@
       </a>
     </li>
     <li>
-      <a href="/customer/index" class="nav-link {{ Request::is('customer/*') ? 'active' : 'text-dark' }}">
-        Customers
+      <a href="/order/index" class="nav-link {{ Request::is('order/*') ? 'active' : 'text-dark' }}">
+        Orders
+      </a>
+    </li>
+    <li>
+      <a href="/payment/index" class="nav-link {{ Request::is('payment/*') ? 'active' : 'text-dark' }}">
+        Payment
       </a>
     </li>
   </ul>
+  <a href="{{ route('signout') }}" class="nav-link text-dark">
+    Logout
+  </a>
   <hr>
   <small>&copy; {{ date('Y') }}</small>
 </div>
