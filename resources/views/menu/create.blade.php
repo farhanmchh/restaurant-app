@@ -29,6 +29,15 @@
               <label class="form-label">Protein :</label>
               <input type="number" name="protein" class="form-control">
             </div>
+            <div class="mb-3">
+              <label class="form-label">Select 2 :</label>
+              <select name="" class="select2 form-select">
+                <option value="farhan">Farhan</option>
+                <option value="ahmad">ahmad</option>
+                <option value="damar">damar</option>
+                <option value="zaky">zaky</option>
+              </select>
+            </div>
 
             <div class="d-grid">
               <button class="btn btn-primary">Create</button>
@@ -38,4 +47,10 @@
       </div>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function() {
+      $('.select-picker').select2();
+    });
+  </script>
 @endsection

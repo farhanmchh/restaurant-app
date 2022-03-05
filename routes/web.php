@@ -1,6 +1,9 @@
 <?php
 
+
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CustomerController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +16,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/{menu}/{view}', function ($menu, $view) {
-//     return view("$menu.$view");
-// });
-
-// Route::get('/', function () {
-//     return view("welcome");
-// });
 
 Route::get('/', [LoginController::class, 'showFormLogin'])->middleware('guest')->name('login');
 Route::post('/',[LoginController::class, 'authenticate']);
-Route::get('dashboard', [LoginController::class, 'dashboard'])->middleware('auth');
-Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
+Route::get('/dashboard', [LoginController::class, 'dashboard'])->middleware('auth');
+Route::get('/signout', [LoginController::class, 'signOut'])->name('signout');
+Route::resource('customer', CustomerController::class);
