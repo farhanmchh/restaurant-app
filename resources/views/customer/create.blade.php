@@ -11,7 +11,7 @@
     <div class="col-5">
       <div class="card">
         <div class="card-body">
-          <form action="/customer" method="POST">
+          <form action="/customer/store" method="POST">
             @csrf
             <div class="mb-3">
               <label class="form-label">Name :</label>
@@ -40,10 +40,4 @@
       </div>
     </div>
   </div>
-
-  <script>
-    $(document).ready(function() {
-      $('.select-picker').select2();
-    });
-  </script>
 @endsection

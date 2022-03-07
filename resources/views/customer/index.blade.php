@@ -27,12 +27,8 @@
               <td>{{ $loop->iteration }}</td>
               <td>{{ $customer->nameCustomer }}</td>
               <td>
-                <a href="/customer/{{ $customer->id }}/edit" class="btn btn-warning btn-lg" title="edit"></a>
-                <form action="/customer/{{ $customer->id }}}" method="POST" class="d-inline">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger btn-lg" type="submit" title="delete" onclick="return confirm('Sure?')"></button>
-                </form>
+                <a href="/customer/edit/{{ $customer->id }}" class="btn btn-warning btn-lg"></a>
+                <a href="/customer/destroy/{{ $customer->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Sure?')"></a>
               </td>
             </tr>
           @endforeach

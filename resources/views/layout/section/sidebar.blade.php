@@ -7,35 +7,30 @@
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li>
-      <a href="" class="nav-link {{ Request::is('dashboard/*') ? 'active' : 'text-dark' }}">
-      <a href="/dashboard" class="nav-link {{ Request::is('dashboard/*') ? 'active' : 'text-dark' }}">
+      <a href="/dashboard/index" class="nav-link {{ Request::is('dashboard*') ? 'active' : 'text-dark' }}">
         Dashboard
       </a>
     </li>
     <li>
-      <a href="/customer" class="nav-link {{ Request::is('customer/*') ? 'active' : 'text-dark' }}">
+      <a href="/customer/index" class="nav-link {{ Request::is('customer*') ? 'active' : 'text-dark' }}">
         Customers
-      <a href="/order" class="nav-link {{ Request::is('order/*') ? 'active' : 'text-dark' }}">
-        Orders
       </a>
     </li>
     <li>
-      <a href="/menu" class="nav-link {{ Request::is('menu/*') ? 'active' : 'text-dark' }}">
+      <a href="/menu/index" class="nav-link {{ Request::is('menu*') ? 'active' : 'text-dark' }}">
         Menu
       </a>
     </li>
     <li>
-      <a href="/order/index" class="nav-link {{ Request::is('order/*') ? 'active' : 'text-dark' }}">
+      <a href="/order/index" class="nav-link {{ Request::is('order*') ? 'active' : 'text-dark' }}">
         Orders
       </a>
     </li>
-    <li>
-      <a href="/payment/index" class="nav-link {{ Request::is('payment/*') ? 'active' : 'text-dark' }}">
+    {{-- <li>
+      <a href="/payment/" class="nav-link {{ Request::is('payment*') ? 'active' : 'text-dark' }}">
         Payment
-      {{-- <a href="/customer" class="nav-link {{ Request::is('customer/*') ? 'active' : 'text-dark' }}">
-        Customers
-      </a> --}}
-    </li>
+      </a>
+    </li> --}}
     {{-- <hr> --}}
     {{-- <li>
       <a href="#" class="nav-link text-dark">

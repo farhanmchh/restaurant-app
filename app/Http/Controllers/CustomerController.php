@@ -35,23 +35,17 @@ class CustomerController extends Controller
 
     Customer::create($data_customer);
 
-    return redirect('/customer')->with('success', 'Data customer has been created!');
+    return redirect('/customer/index')->with('success', 'Data customer has been created!');
   }
 
-  public function show()
+  public function edit($id)
   {
-    //
-  }
-
-  public function edit(Customer $customer)
-  {
-    // return dd('edit');
     return view('customer.edit', [
-      'customer' => Customer::where('id', $customer->id)->first()
+      'customer' => Customer::where('id', $id)->first()
     ]);
   }
 
-  public function update(Request $request, Customer $customer)
+  public function update(Request $request, $id)
   {
     $data_customer = $request->validate([
       'nameCustomer' => ['required'],
@@ -65,14 +59,14 @@ class CustomerController extends Controller
       $data_customer['member'] = 0;
     }
 
-    Customer::where('id', $customer->id)->update($data_customer);
+    Customer::where('id', $id)->update($data_customer);
 
-    return redirect('/customer')->with('success', 'Data customer has been updated!');
+    return redirect('/customer/index')->with('success', 'Data customer has been updated!');
   }
 
-  public function destroy(Customer $customer)
+  public function destroy($id)
   {
-    Customer::where('id', $customer->id)->delete();
+    Customer::where('id', $id)->delete();
 
     return back()->with('success', 'Data customer has been deleted!');
   }

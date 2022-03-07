@@ -21,4 +21,12 @@ Route::get('/', [LoginController::class, 'showFormLogin'])->middleware('guest')-
 Route::post('/',[LoginController::class, 'authenticate']);
 Route::get('/dashboard', [LoginController::class, 'dashboard'])->middleware('auth');
 Route::get('/signout', [LoginController::class, 'signOut'])->name('signout');
-Route::resource('customer', CustomerController::class);
+
+Route::prefix('customer')->group(function() {
+  Route::get('/index', [CustomerController::class, 'index']);
+  Route::get('/create', [CustomerController::class, 'create']);
+  Route::post('/store', [CustomerController::class, 'store']);
+  Route::get('/edit/{id}', [CustomerController::class, 'edit']);
+  Route::post('/update/{id}', [CustomerController::class, 'update']);
+  Route::get('/destroy/{id}', [CustomerController::class, 'destroy']);
+});
