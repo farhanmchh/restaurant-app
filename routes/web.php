@@ -3,7 +3,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CustomerController;
-
+use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +29,13 @@ Route::prefix('customer')->group(function() {
   Route::get('/edit/{id}', [CustomerController::class, 'edit']);
   Route::post('/update/{id}', [CustomerController::class, 'update']);
   Route::get('/destroy/{id}', [CustomerController::class, 'destroy']);
+});
+
+Route::prefix('menu')->group(function() {
+  Route::get('/index', [MenuController::class, 'index']);
+  Route::get('/create', [MenuController::class, 'create']);
+  Route::post('/store', [MenuController::class, 'store']);
+  Route::get('/edit/{id}', [MenuController::class, 'edit']);
+  Route::post('/update/{id}', [MenuController::class, 'update']);
+  Route::get('/destroy/{id}', [MenuController::class, 'destroy']);
 });

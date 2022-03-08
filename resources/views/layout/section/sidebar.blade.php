@@ -7,7 +7,7 @@
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li>
-      <a href="/dashboard/index" class="nav-link {{ Request::is('dashboard*') ? 'active' : 'text-dark' }}">
+      <a href="/dashboard" class="nav-link {{ Request::is('dashboard*') ? 'active' : 'text-dark' }}">
         Dashboard
       </a>
     </li>

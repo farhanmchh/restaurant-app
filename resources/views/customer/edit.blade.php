@@ -5,7 +5,7 @@
     <span class="fs-3 border-1 border-bottom pb-2 pe-3">Create customer</span>
   </div>
 
-  <a href="/customer" class="btn btn-secondary btn-lg mb-3" title="back"></a>
+  <a href="/customer/index" class="btn btn-secondary btn-lg mb-3" title="back"></a>
 
   <div class="row">
     <div class="col-5">

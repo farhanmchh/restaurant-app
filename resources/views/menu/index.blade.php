@@ -7,50 +7,44 @@
 
   <a href="/menu/create" class="btn btn-primary px-3 mb-2">Create</a>
 
+  @if (session('success'))
+    <div class="my-1">
+      <span class="text-white bg-success">{{ session('success') }}</span>
+    </div>
+  @endif
+
   <div class="row">
     <div class="col-10">
       <table class="table table-striped text-center">
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Photo</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>#</td>
-            <td>nama</td>
-            <td>
-              <a href="/menu/edit" class="btn btn-warning btn-lg" title="edit"></a>
-              <form action="#" method="POST" class="d-inline">
-                @method('DELETE')
-                <button class="btn btn-danger btn-lg" type="submit" title="delete"></button>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>nama</td>
-            <td>
-              <a href="/menu/edit" class="btn btn-warning btn-lg" title="edit"></a>
-              <form action="#" method="POST" class="d-inline">
-                @method('DELETE')
-                <button class="btn btn-danger btn-lg" type="submit" title="delete"></button>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <td>#</td>
-            <td>nama</td>
-            <td>
-              <a href="/menu/edit" class="btn btn-warning btn-lg" title="edit"></a>
-              <form action="#" method="POST" class="d-inline">
-                @method('DELETE')
-                <button class="btn btn-danger btn-lg" type="submit" title="delete"></button>
-              </form>
-            </td>
-          </tr>
+          @foreach ($menu as $m)
+            <tr>
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $m->nameMenu }}</td>
+              <td>{{ $m->price }}</td>
+              <td>
+                @if ($m->photoMenu)
+                  <img src="{{ asset("storage/$m->photoMenu") }}" width="25%" height="25%">
+                @else
+                  <img src="/photo/default.png" width="25%" height="25%">
+                @endif
+              </td>
+              <td>
+                <a href="/menu/edit/{{ $m->id }}" class="btn btn-warning btn-lg"></a>
+                <a href="/menu/destroy/{{ $m->id }}" class="btn btn-danger btn-lg"
+                  onclick="return confirm('Sure?')"></a>
+              </td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
