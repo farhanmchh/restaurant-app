@@ -4,6 +4,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,4 +39,14 @@ Route::prefix('menu')->group(function() {
   Route::get('/edit/{id}', [MenuController::class, 'edit']);
   Route::post('/update/{id}', [MenuController::class, 'update']);
   Route::get('/destroy/{id}', [MenuController::class, 'destroy']);
+});
+
+Route::prefix('order')->group(function() {
+  Route::get('/index', [OrderController::class, 'index']);
+  Route::get('/create', [OrderController::class, 'create']);
+  Route::post('/store', [OrderController::class, 'store']);
+  Route::get('/show/{order}', [OrderController::class, 'show']);
+  Route::get('/edit/{order}', [OrderController::class, 'edit']);
+  Route::post('/update/{order}', [OrderController::class, 'update']);
+  Route::get('/destroy/{order}', [OrderController::class, 'destroy']);
 });

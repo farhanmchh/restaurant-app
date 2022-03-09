@@ -23,7 +23,7 @@
             </div>
             <div class="mb-3">
               <label class="form-label">Phone :</label>
-              <input type="text" name="phoneCustomer" class="form-control" value="{{ $customer->phoneCustomer  }}">
+              <input type="text" name="phoneCustomer" class="form-control" value="{{ $customer->phoneCustomer }}">
             </div>
             <div class="mb-3">
               <div class="form-check">
@@ -40,5 +40,4 @@
       </div>
     </div>
   </div>
-
 @endsection
