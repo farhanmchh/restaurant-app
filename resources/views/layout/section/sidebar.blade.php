@@ -3,7 +3,7 @@
     <span class="fs-4">Sidebar</span>
   </a>
   <hr>
-  <strong class="ms-3">Mr. Schamander</strong>
+  <strong class="ms-3">{{ auth()->user()->name }}</strong>
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li>
@@ -16,27 +16,18 @@
         Customers
       </a>
     </li>
-    <li>
-      <a href="/menu/index" class="nav-link {{ Request::is('menu*') ? 'active' : 'text-dark' }}">
-        Menu
-      </a>
-    </li>
+    @if (auth()->user()->role == 'admin')
+      <li>
+        <a href="/menu/index" class="nav-link {{ Request::is('menu*') ? 'active' : 'text-dark' }}">
+          Menu
+        </a>
+      </li>
+    @endif
     <li>
       <a href="/order/index" class="nav-link {{ Request::is('order*') ? 'active' : 'text-dark' }}">
         Orders
       </a>
     </li>
-    {{-- <li>
-      <a href="/payment/" class="nav-link {{ Request::is('payment*') ? 'active' : 'text-dark' }}">
-        Payment
-      </a>
-    </li> --}}
-    {{-- <hr> --}}
-    {{-- <li>
-      <a href="#" class="nav-link text-dark">
-        Logout
-      </a>
-    </li> --}}
   </ul>
   <a href="{{ route('signout') }}" class="nav-link text-dark">
     Logout

@@ -33,7 +33,8 @@
               <td>
                 <a href="/order/show/{{ $o->id }}" class="btn btn-info btn-lg"></a>
                 <a href="/order/edit/{{ $o->id }}" class="btn btn-warning btn-lg"></a>
-                <a href="/order/destroy/{{ $o->id }}" class="btn btn-danger btn-lg" onclick="return confirm('Sure?')"></a>
+                <a href="/order/destroy/{{ $o->id }}" class="btn btn-danger btn-lg"
+                  onclick="return confirm('Sure?')"></a>
               </td>
             </tr>
           @endforeach

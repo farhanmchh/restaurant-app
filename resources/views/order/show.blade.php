@@ -27,23 +27,23 @@
           <div class="mb-3">
             <p class="m-0">Detail order :</p>
             @foreach ($order->orderItem as $orderItem)
-              <div class="d-flex justify-content-between">
-                <small class="fst-italic">{{ $orderItem->menu->nameMenu }}</small>
-                <small class="fst-italic">{{ $orderItem->quantity }}</small>
-                <small class="fst-italic">{{ $orderItem->subTotal }}</small>
+              <div class="d-flex justify-content-between fst-italic">
+                <small>{{ $orderItem->menu->nameMenu }}</small>
+                <small>{{ $orderItem->quantity }}</small>
+                <small>{{ $orderItem->subTotal }}</small>
               </div>
             @endforeach
 
             @if ($order->customer->member)
-              <div class="text-end">
-                <small class="fst-italic me-3">Discount Member :</small>
-                <small class="fst-italic border-top border-dark">10 %</small>
+              <div class="text-end fst-italic">
+                <small class="me-3">Discount Member :</small>
+                <small class="border-top border-dark">10 %</small>
               </div>
             @endif
 
-            <div class="text-end">
-              <small class="fst-italic me-3">Total :</small>
-              <small class="fst-italic border-top border-dark">{{ $order->total }}</small>
+            <div class="text-end fst-italic">
+              <small class="me-3">Total :</small>
+              <small class="border-top border-dark">{{ $order->total }}</small>
             </div>
           </div>
         </div>

@@ -6,30 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCustomerTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('customer', function (Blueprint $table) {
-            $table->id();
-            $table->string('nameCustomer',100); // ('namafield, length)
-            $table->string('emailCustomer',50);
-            $table->string('phoneCustomer', 13);
-            $table->boolean('member');
-            $table->timestamps();
-        });
-    }
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    Schema::create('customer', function (Blueprint $table) {
+      $table->id();
+      $table->string('nameCustomer', 100); // ('namafield, length)
+      $table->string('emailCustomer', 50);
+      $table->string('phoneCustomer', 13);
+      $table->boolean('member');
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('customer');
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::dropIfExists('customer');
+  }
 }

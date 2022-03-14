@@ -57,15 +57,15 @@
 
     function menu() {
       return `<div class="input-group mb-1 menu">
-            <select name="menuId[]" class="form-select">
-              <option></option>
-              @foreach ($menu as $m)
-                <option value="{{ $m->id }}">{{ $m->nameMenu }}</option>
-              @endforeach
-            </select>
-            <input type="number" name="quantity[]" class="form-control" placeholder="Quantity" value="1">
-            <a class="btn btn-danger btn-delete-menu"></a>
-          </div>`
+                <select name="menuId[]" class="form-select">
+                  <option></option>
+                  @foreach ($menu as $m)
+                    <option value="{{ $m->id }}">{{ $m->nameMenu }}</option>
+                  @endforeach
+                </select>
+                <input type="number" name="quantity[]" class="form-control" placeholder="Quantity" value="1">
+                <a class="btn btn-danger btn-delete-menu"></a>
+              </div>`
     }
   </script>
 @endsection
